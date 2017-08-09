@@ -1,0 +1,8 @@
+﻿  WaterProblem.c
+  SubMatrixSumMax.c
+  SubArraySumMax.c
+  2SubArraySumMax.c
+d:\documents\visualproject\牛客第四节\array\2subarraysummax.c(7): warning C4013: “malloc”未定义；假设外部返回 int
+  正在生成代码...
+  Array.vcxproj -> D:\Documents\VisualProject\牛客第四节\Array\Debug\Array.exe
+  Array.vcxproj -> D:\Documents\VisualProject\牛客第四节\Array\Debug\Array.pdb (Partial PDB)
