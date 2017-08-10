@@ -20,12 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="2SubArraySumMax.c" />
+    <ClCompile Include="MaxAbsBetweenLeftAndRight.c" />
     <ClCompile Include="SubArraySumMax.c" />
     <ClCompile Include="SubMatrixSumMax.c" />
     <ClCompile Include="WaterProblem.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="2SubArraySumMax.h" />
+    <ClInclude Include="MaxAbsBetweenLeftAndRight.h" />
     <ClInclude Include="SubArraySumMax.h" />
     <ClInclude Include="SubMatrixSumMax.h" />
     <ClInclude Include="WaterProblem.h" />
