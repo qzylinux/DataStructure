@@ -1,13 +1,19 @@
 牛客算法精讲第四节（C语言+VS2017）
 =======================================
->markdown格式学习——[点击链接](http://guoyunsky.iteye.com/blog/1781885)<br />
->>[前讲?](#前讲)
+>markdown格式学习——[点击链接](http://guoyunsky.iteye.com/blog/1781885)<br>
+
+>[前讲?](#前讲)
+
 >[第一题?](#第一题)
+
 >[第二题?](#第二题)
+
 >[第三题?](#第三题)
+
 >[第四题?](#第四题)
-#前讲
-####题目：
+
+# 前讲
+#### 题目：
 >找一个数组的连续子数组的最大和。
 ```
 typedef int ArrayElem;
@@ -39,6 +45,7 @@ ArrayElem SubArraySumMax(ArrayElem *array, int length)
 }
 ```
 # 第一题
+
  > 给定一个矩阵matrix，其中的值有正、有负、有0，返回子矩阵的最大累加和。
 例如，矩阵matrix为：
 ```
