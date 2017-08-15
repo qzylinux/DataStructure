@@ -1,63 +1,98 @@
 #include "KMPSubStr.h"
 
-void KMP_next(char * str, int length, int * next)
+void KMP_next(char  *str, int length, int *next)
 {
-	int j = 0;
-	*next = 0;
+	int i = 0, j = 1;
+	next[0] = 0;
 
-	for (int i = 1; i < length; i++)
+	while(j<length)
 	{
-		if (*(str + i) == *(str + j))
+		if (str[i] == str[j])
 		{
-			*(next + i) = j + 1;
+			next[j]=i+1;
 			j++;
+			i++;
 		}
 		else
 		{
-			j = 0;
-			*(next + i) = 0;
+			if (i != 0)
+			{
+				i =next[ i - 1];
+			}
+			else
+			{
+				next[j] = 0;
+				j++;
+			}
 		}
-
 	}
 }
 
-int KMP_SubStr(char * text, int text_length, char * pattern, int pattern_length)
+void KMP_SubStr(char * text, int text_length, char * pattern, int pattern_length,int *local)
 {
-	int local = -1;
-	//定位pattern内的位置
-	int j = 0;
-	//next数组
-	int* next = (int *)malloc(sizeof(int)*pattern_length);
-	//初始化Next数组
-	memset(next, pattern_length, sizeof(int));
-	//生成Next数组的值
+	int i = 0,j=0,l=0;
+	int * next = (int*)malloc(sizeof(int)*pattern_length);
 	KMP_next(pattern, pattern_length, next);
-	for (int j = 0; j < pattern_length; j++)
-		printf("%d ", *(next+j));
-	for (int i = 0; i < text_length; i++)
+	while ((i<text_length)&&(j<pattern_length))
 	{
 		if (text[i] == pattern[j])
 		{
+			i++;
 			j++;
 			if (j == pattern_length)
 			{
-				local = i - j + 1;
+				local[l++]=i-pattern_length;
+				j = 0;
 			}
 		}
 		else
 		{
-			if (j != 0)
-				j = *(next + j - 1);
+			if (j == 0)
+			{
+				i++;
+			}
 			else
-				j = 0;
+			{
+				j = next[j - 1];
+			}
 		}
 	}
-	return local;
 }
 
 int KMP_SubStr_Num(char * text, int text_length, char * pattern, int pattern_length)
 {
-	return 0;
+	int num = 0;
+	int i = 0;
+	int j = 0;
+	int * next = (int*)malloc(sizeof(int)*pattern_length);
+	KMP_next(pattern, pattern_length, next);
+	while ((i<text_length) && (j<pattern_length))
+	{
+		if (text[i] == pattern[j])
+		{
+			i++;
+			j++;
+			if (j == pattern_length)
+			{
+				num++;
+				j = 0;
+			}
+		}
+		else
+		{
+			if (j == 0)
+			{
+				i++;
+			}
+			else
+			{
+				j = next[j - 1];
+			}
+		}
+	}
+	free(next);
+	next = NULL;
+	return num;
 }
 
 
@@ -65,8 +100,38 @@ int KMP_SubStr_Num(char * text, int text_length, char * pattern, int pattern_len
 
 int main(void)
 {
-	char text[18] = { 'e','a','b','c','a','f','a','b','c','a','f','d','a','a','b','c','a','b' };
-	char pattern[9] = { 'a','b','c','a','b' };
-	int a =KMP_SubStr(text, 18, pattern, 5);
-	printf("%d ",a);
+	char text[20];
+	char pattern[10];
+	int text_len, pattern_len;
+	int subnum=0;
+	scanf("%s", text);
+	scanf("%s", pattern);
+	text_len=strlen(text);
+	pattern_len = strlen(pattern);
+	int* next = (int*)malloc(sizeof(int)*pattern_len);
+	if (next != NULL)
+	{
+		KMP_next(pattern, pattern_len, next);
+		for (int i = 0; i < pattern_len; i++)
+			printf("%d", next[i]);
+		free(next);
+		next = NULL;
+	}
+	printf("\n");
+	//申请一个内存空间存放子字符串开始位置
+	int* local = (int*)malloc(sizeof(int)*text_len);
+	if (local != NULL)
+	{
+		//malloc申请的内存默认不初试化
+		memset(local, 0, sizeof(int)*text_len);
+		//统计子字符串开始的位置
+		KMP_SubStr(text, text_len, pattern, pattern_len, local);
+		for (int i = 0; i < text_len; i++)
+			printf("%d", local[i]);
+		free(local);
+		local = NULL;
+	}
+	//统计出现了几个子字符串
+	subnum = KMP_SubStr_Num(text, text_len, pattern, pattern_len);
+	printf("\n%d", subnum);
 }

@@ -1,0 +1,10 @@
+﻿1>------ 已启动全部重新生成: 项目: KMPSubStr, 配置: Debug Win32 ------
+1>KMPSubStr.c
+1>d:\my  document\datastructure-master\kmpsubstr\kmpsubstr\kmpsubstr.c(78): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+1>c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: 参见“scanf”的声明
+1>d:\my  document\datastructure-master\kmpsubstr\kmpsubstr\kmpsubstr.c(79): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+1>c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: 参见“scanf”的声明
+1>KMPSubStr.vcxproj -> D:\My  document\DataStructure-master\KMPSubStr\Debug\KMPSubStr.exe
+1>KMPSubStr.vcxproj -> D:\My  document\DataStructure-master\KMPSubStr\Debug\KMPSubStr.pdb (Partial PDB)
+1>已完成生成项目“KMPSubStr.vcxproj”的操作。
+========== 全部重新生成: 成功 1 个，失败 0 个，跳过 0 个 ==========
