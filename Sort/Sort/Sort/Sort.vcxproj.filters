@@ -39,6 +39,9 @@
     <ClCompile Include="QuickSort.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="MergeSort.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="myheader.h">
@@ -60,6 +63,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="QuickSort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MergeSort.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

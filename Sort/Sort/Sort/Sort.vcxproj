@@ -142,6 +142,7 @@
     <ClCompile Include="BulleSort.c" />
     <ClCompile Include="HeapSort.c" />
     <ClCompile Include="InsertSort.c" />
+    <ClCompile Include="MergeSort.c" />
     <ClCompile Include="myheader.c" />
     <ClCompile Include="QuickSort.c" />
     <ClCompile Include="result_main.c" />
@@ -152,6 +153,7 @@
     <ClInclude Include="BulleSort.h" />
     <ClInclude Include="HeapSort.h" />
     <ClInclude Include="InsertSort.h" />
+    <ClInclude Include="MergeSort.h" />
     <ClInclude Include="myheader.h" />
     <ClInclude Include="QuickSort.h" />
     <ClInclude Include="SelectSort.h" />
